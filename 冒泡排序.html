@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>冒泡排序</title>
+</head>
+<body>
+<script type="text/javascript">
+	function sort(arr) {
+		var len=arr.length;
+		if(len <= 1) return ;
+		for(var i=0;i<len;i++){
+			var flag = false;
+			for(var j=0;j<len-i-1;j++){
+				if(arr[j]>arr[j+1]){
+					var temp = arr[j+1];
+					arr[j+1] = arr[j];
+					arr[j] = temp;
+					flag = true;
+				}
+			}
+			if(!flag) break;
+		}
+		return arr;
+	}
+	var arr=[3,5,7,2,9,3,5,1,5,0];
+	var newArr = sort(arr);
+	console.log(newArr);
+</script>
+</body>
+</html>

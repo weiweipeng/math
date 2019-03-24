@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>快速排序只田地问题</title>
+
+</head>
+<body>
+	<p>问题简介：有个地主有块土地，长1680，宽640，想将其划分为等大小的正方块，最大的大小的是多少</p>
+<script type="text/javascript">
+	var x=1680;
+	var y=640;
+	var min=0;
+	function getDivideArea(x,y) {
+
+		var disom=x%y;
+		
+		if(disom>0){
+			var divides=getDivideArea(y,disom);
+		}else{
+			min=y;
+			// return min;
+		}
+	}
+	//问题：无法通过return min来获取值，返回的是undefined，可能原因是调用栈进行释放，会对本身释放调用的次数，这样会覆盖第一次得到的值，返回的是undefined
+	var dividenum=getDivideArea(x,y);
+	console.log(min);
+</script>
+</body>
+</html>

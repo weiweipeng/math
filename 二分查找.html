@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>二分查找</title>
+</head>
+<body>
+<script type="text/javascript">
+	function getIndex(arr,item) {
+		var low=0;
+		var hight=arr.length;
+		while(low<=hight){
+			var mid=Math.ceil((low+hight)/2);
+			if(arr[mid]==item){
+				return mid;
+			}else if(arr[mid]<item){
+				low=mid+1;
+			}else{
+				hight=mid-1;
+			}
+		}
+		return -1;
+		
+	}
+	var arr=[1,2,3,4,5,6,7,8,9,10];
+	var item=4;
+	var index=getIndex(arr,item);
+	console.log(index);
+</script>
+</body>
+</html>

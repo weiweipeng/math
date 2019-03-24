@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>二分查找之第一个大于给定值的元素</title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+<script type="text/javascript">
+	function getIndex(arr,item) {
+		var low = 0;
+		var high = arr.length-1;
+		while(low<=high){
+			var mid = Math.ceil((low+high)/2);
+			if(item <= arr[mid]){
+				if(mid == 0 || item > arr[mid-1]){
+					return mid;
+				}else{
+					high = mid - 1;
+				}
+			}else{
+				low = mid + 1;
+			}
+		}
+		return -1;
+	}
+	var arr=[1,2,3,4,4,4,7,8,9,10];
+	var item=4;
+	var index=getIndex(arr,item);
+	console.log(index);
+</script>
+</body>
+</html>

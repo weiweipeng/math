@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>选择排序</title>
+	<meta charset="utf-8">
+</head>
+<body>
+<script type="text/javascript">
+	function minimumNum(arr) {
+		if(arr.length == 1) return arr[0];
+		var minist = arr[0];
+		for(var i=0;i<arr.length;i++){
+			if(minist<arr[i]){
+				minist = arr[i];
+			}
+		}
+		return minist;
+	}
+	
+	function selectSort(arr){
+		var new_arr=[];
+		while(arr.length > 0){
+			var minist = minimumNum(arr);
+			var index = arr.indexOf(minist);
+			new_arr.push(minist);
+			arr.splice(index,1);
+		}
+		return new_arr;
+	}
+	var arr=[3,5,7,2,9,3,5,1,5,0];
+	var newArr = selectSort(arr);
+	console.log(newArr);
+</script>
+</body>
+</html>

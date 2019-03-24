@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>普通排序</title>
+</head>
+<body>
+<script type="text/javascript">
+	function getSmall(arr) {
+		var small=arr[0];
+		var small_index=0;
+		for(var i=0;i<arr.length;i++){
+			if(small>arr[i]){
+				small=arr[i];
+				small_index=i;
+			}
+		}
+		return small_index;
+	}
+	function getSort(arr){
+		var new_arr=[];
+		while(arr.length>0){
+			var small=getSmall(arr);
+			new_arr.push(arr.splice(small,1)[0]);
+		}
+		return new_arr;
+	}
+	
+	var arr=[4,51,34,1,54,2,45,23,57,23,534,23,67,2];
+	var sortArr=getSort(arr);
+	console.log(sortArr);
+</script>
+</body>
+</html>

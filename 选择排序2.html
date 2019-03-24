@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>选择排序2</title>
+	<meta charset="utf-8">
+</head>
+<body>
+<script type="text/javascript">
+	function selectSort(arr) {
+		if(arr.length == 0) return ;
+		for(var i=0;i<arr.length;i++){
+			var value = arr[i];
+			var nimist=arr[i];
+			var index = i;
+			for(var j=i;j<arr.length;j++){
+				
+				if(nimist < arr[j]){
+					nimist = arr[j];
+					index = j;
+				}
+			}
+			arr[i] = arr[index];
+			arr[index] = value;
+		}
+		return arr;
+	}
+	var arr=[3,5,7,2,9,3,5,1,5,0];
+	var newArr = selectSort(arr);
+	console.log(newArr);
+</script>
+</body>
+</html>

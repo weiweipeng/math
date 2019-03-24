@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>快速排序之数组求和</title>
+</head>
+<body>
+<p>一个数组通过递归进行求和</p>
+<script type="text/javascript">
+	var arr=[2,4,6,8,3,12];
+	var count=0;
+	var sumnum=0;
+	function sums(arr) {
+		if(count<arr.length){
+			sumnum+=arr[count];
+			count++;
+			sums(arr);
+		}else{
+			return ;	
+		}
+	}
+	var sumss=sums(arr);
+	console.log(sumnum);
+</script>
+</body>
+</html>

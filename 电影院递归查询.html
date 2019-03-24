@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>爬楼梯的多重解法</title>
+</head>
+<body>
+<script type="text/javascript">
+	var all=50;
+	function twoStyle(n) {
+		
+		alert(n);
+		if(n == 1){
+			return 1;
+		}else if(n == 2){
+			return 2;
+		}else{
+			return twoStyle(n-1) + twoStyle(n-2);
+		}
+		
+	}
+	var num=twoStyle(50);
+	console.log(num);
+</script>
+</body>
+</html>
